@@ -1,50 +1,31 @@
 import * as React from 'react';
-import { Button, View, Text } from 'react-native';
-import { createAppContainer } from 'react-navigation';
+import {
+  ActivityIndicator,
+  Button,
+  StatusBar,
+  StyleSheet,
+  View,
+  AsyncStorage
+} from 'react-native';
+
+import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-        />
-      </View>
-    );
-  }
-}
+import HomeScreen from './src/pages/HomeScreen';
+import SignInScreen from './src/pages/SignInScreen';
+import OtherScreen from './src/pages/SignInScreen';
+import AuthLoadingScreen from './src/pages/AuthLoadingScreen'
 
-class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
-        <Button
-          title="Go to Details... again"
-          onPress={() => this.props.navigation.navigate('Home')}
-        />
-      </View>
-    );
-  }
-}
+const AppStack = createStackNavigator({ Home: HomeScreen, Other: OtherScreen });
+const AuthStack = createStackNavigator({ SignIn: SignInScreen });
 
-const RootStack = createStackNavigator(
+export default createAppContainer(createSwitchNavigator(
   {
-    Home: HomeScreen,
-    Details: DetailsScreen,
+    AuthLoading: AuthLoadingScreen,
+    App: AppStack,
+    Auth: AuthStack,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'AuthLoading',
   }
-);
-
-const AppContainer = createAppContainer(RootStack);
-
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
-}
+));
