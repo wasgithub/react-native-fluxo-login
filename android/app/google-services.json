@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "432786116127",
+    "firebase_url": "https://learn-firebase-cf797.firebaseio.com",
+    "project_id": "learn-firebase-cf797",
+    "storage_bucket": "learn-firebase-cf797.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432786116127:android:2b1c704d10098793af0f2a",
+        "android_client_info": {
+          "package_name": "com.reactnativereactnavigationv4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432786116127-rku550i749cne0173j3qufn7usrjcmh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv20oMbssB_gzmr1HpWs4vL1lJeNnjRkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432786116127-rku550i749cne0173j3qufn7usrjcmh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432786116127:android:723daa7f766d547daf0f2a",
+        "android_client_info": {
+          "package_name": "com.totvsroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432786116127-rku550i749cne0173j3qufn7usrjcmh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv20oMbssB_gzmr1HpWs4vL1lJeNnjRkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432786116127-rku550i749cne0173j3qufn7usrjcmh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,20 +3,33 @@ import {
     Button,
     View,
     AsyncStorage,
-    StyleSheet
+    StyleSheet,
+    Text
   } from 'react-native';
 
 class HomeScreen extends React.Component {
+  state = {currentUser: null};
     static navigationOptions = {
       title: 'Welcome to the app!',
     };
   
     render() {
+      const {currentUser} = this.state;
       return (
         <View style={styles.container}>
-          <Button title="Show me more of the app" onPress={this._showMoreApp}/>
-          <Button title="Actually, sign me out :)" onPress={this._signOutAsync} />
-        </View>
+          <Text style={{fontSize: 25}}>Hi </Text>
+          <Text style={{color: 'blue', fontSize: 25}}>
+            {currentUser && currentUser.email}
+          </Text>
+
+          <View style={{marginVertical: 20}}>
+            <Button
+              title="Mostrar mais"
+              color="blue"
+              onPress={() => this._showMoreApp()}
+            />
+          </View> 
+        </View>        
       );
     }
   
@@ -33,9 +46,9 @@ class HomeScreen extends React.Component {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'center',
       justifyContent: 'center',
+      alignItems: 'center',
     },
-  });
+  });  
 
   export default HomeScreen;

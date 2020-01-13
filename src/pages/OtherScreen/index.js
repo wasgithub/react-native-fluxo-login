@@ -7,6 +7,8 @@ import {
     StyleSheet
   } from 'react-native';
 
+  import firebase from 'react-native-firebase';
+
 class OtherScreen extends React.Component {
     static navigationOptions = {
         title: 'Lots of features here',
@@ -15,7 +17,7 @@ class OtherScreen extends React.Component {
     render() {
         return (
         <View style={styles.container}>
-            <Button title="I'm done, sign me out" onPress={this._signOutAsync} />
+            <Button title="I'm done, sign me out" onPress={this.signOutUser} />
             <StatusBar barStyle="default" />
         </View>
         );
@@ -25,6 +27,15 @@ class OtherScreen extends React.Component {
         await AsyncStorage.clear();
         this.props.navigation.navigate('Auth');
     };
+
+    signOutUser = async () => {
+      try {
+          await firebase.auth().signOut();
+          this.props.navigation.navigate('SignIn');
+      } catch (e) {
+          console.log(e);
+      }
+  }    
 }
 
 const styles = StyleSheet.create({
